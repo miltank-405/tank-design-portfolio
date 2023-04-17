@@ -13,7 +13,27 @@ $width: 200px;
 $height: $width / 3;
 
 
-// ブレークポイント1120
+// レスポンシブ ------------------------------------
+$pc: 1120px;
+$tab: 1119px;
+$sp: 767px;
+@mixin pc {
+	@media screen and (min-width: ($pc)) {
+		@content;
+	}
+}
+@mixin tab {
+	@media screen and (max-width: ($tab)) {
+		@content;
+	}
+}
+@mixin sp {
+	@media screen and (max-width: ($sp)) {
+		@content;
+	}
+}
+
+
 
 // html ----------------------------------------
 html,body {
@@ -24,9 +44,23 @@ body {
 	background-color: $green;
 	overflow: hidden;
 	display: flex;
+	flex-wrap: wrap;
+	@include tab {
+		display: block;
+	}
 }
-main {
+main,
+footer {
 	width: 82.99vw;
+}
+main,aside {
+	height: 90vh;
+}
+nav,
+main,
+aside,
+footer {
+	display: block;
 }
 a {
 	text-decoration: none;
@@ -53,7 +87,7 @@ img {
 	display: none;
 	&-wrapper {
 		width: 71.32vw;
-		height: 73.22vh;
+		height: 72.6vh;
 	}
 }
 // on
@@ -130,7 +164,7 @@ img {
 	}
 	&-link {
 		width: 71.32vw;
-		height: 73.22vh;
+		height: 72.6vh;
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
@@ -389,7 +423,7 @@ MV
 =============================================*/
 .flame {
 	position: relative;
-	margin: 4.22vh auto 2.67vh;
+	margin: 4.22vh auto 0;
 	padding: 2.43vh 2.71vw;
 	width: 76.74vw;
 	border: $text 10px solid;
@@ -400,6 +434,10 @@ MV
 	-webkit-box-shadow: 0 0 36px $text inset;
 	-o-box-shadow: 0 0 36px $text inset;
 	box-shadow: 0 0 36px $text inset;
+	@include tab {
+		width: 92vw;
+		margin: 4%;
+	}
 	.kv {
 		display: block;
 		margin: 0 auto;
@@ -410,6 +448,9 @@ MV
 			object-position: 0 1%;
 			border: $text 3px solid;
 			border-radius: 50px;
+			@include tab {
+				width: 87vw;
+			}
 		}
 	}
 }
@@ -429,6 +470,11 @@ MV
 			text-align: right;
 			line-height: 144px;
 			letter-spacing: 10px;
+			@include tab {
+				top: 6.78vh;
+				right: 4.44vw;
+				font-size: 10.53vw;
+			}
 		}
 		&-bottom {
 			font-size: 120px;
@@ -444,6 +490,12 @@ MV
 			text-align: right;
 			line-height: 144px;
 			letter-spacing: 10px;
+			@include tab {
+				top: 6.22vh;
+				right: 4.79vw;
+				font-size: 10.53vw;
+				-webkit-text-stroke: 0.21vw $orange;
+			}
 		}
 		&-top {
 			font-size: 120px;
@@ -459,6 +511,12 @@ MV
 			text-align: right;
 			line-height: 144px;
 			letter-spacing: 10px;
+			@include tab {
+				top: 7.33vh;
+				right: 4.03vw;
+				font-size: 10.53vw;
+				-webkit-text-stroke: 0.21vw $text;
+			}
 		}
 	}
 }
@@ -468,141 +526,12 @@ MV
 }
 
 
-/* =============================================
-nav
-	- メインコンテンツの下のボタン
-=============================================*/
-.nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 6.67vh;
-	text-align: center;
-	&-logo {
-		margin: 0 50px;
-		font-size: 30px;
-		font-family: "futura-pt-bold", sans-serif;
-		font-weight: 700;
-		font-style: normal;
-		text-align: center;
-		color: #FCEBB7;
-		-webkit-text-stroke: 1px $text;
-		text-shadow: 2px 2px 0 $text;
-		letter-spacing: 3px;
-		&:hover {
-			text-shadow: none;
-			margin: 2px 50px 0 50px;
-		}
-	}
-	&-left {
-		color: #FCEBB7;
-		border-radius: 50%;
-		position: relative;
-		display: block;
-		height: 40px;
-		width: 40px;
-		text-align: center;
-		padding-top: 12px;
-		box-sizing: border-box;
-		font-size: 14px;
-		background: #FCEBB7;
-		box-shadow: 0 2px 0 #916740;
-		border: $text 3px solid;
-		&:before {
-			content: '';
-			position: absolute;
-			top: 7px;
-			right: 13px;
-			width: 0;
-			height: 0;
-			border-right: 12px solid $text;
-			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent;
-		}
-		div {
-			position: relative;
-			font-family: "futura-pt-bold", sans-serif;
-			font-weight: 700;
-			font-style: normal;
-			text-align: center;
-			-webkit-text-stroke: 1px $text;
-			text-shadow: 1px 1px 0 $text;
-			letter-spacing: 1px;
-			padding-top: 5px;
-			&:hover {
-				text-shadow: none;
-			}
-		}
-		.nav-btn {
-			font-size: 40px;
-			position: relative;
-			display: inline-block;
-			transition: .5s
-		}
-		&:hover {
-			text-shadow: none;
-			box-shadow: none;
-			margin-top: 2px;
-		}
-	}
-	&-right {
-		color: #FCEBB7;
-		border-radius: 50%;
-		position: relative;
-		display: block;
-		height: 40px;
-		width: 40px;
-		text-align: center;
-		padding-top: 12px;
-		box-sizing: border-box;
-		font-size: 14px;
-		background: #FCEBB7;
-		box-shadow: 0 2px 0 #916740;
-		border: $text 3px solid;
-		&:before {
-			content: '';
-			position: absolute;
-			top: 7px;
-			left: 13px;
-			width: 0;
-			height: 0;
-			border-left: 12px solid $text;
-			border-top: 10px solid transparent;
-			border-bottom: 10px solid transparent;
-		}
-		div {
-			position: relative;
-			font-family: "futura-pt-bold", sans-serif;
-			font-weight: 700;
-			font-style: normal;
-			text-align: center;
-			-webkit-text-stroke: 1px $text;
-			text-shadow: 1px 1px 0 $text;
-			letter-spacing: 1px;
-			padding-top: 5px;
-			&:hover {
-				text-shadow: none;
-			}
-		}
-		.nav-btn {
-			font-size: 40px;
-			position: relative;
-			display: inline-block;
-			transition: .5s
-		}
-		&:hover {
-			text-shadow: none;
-			box-shadow: none;
-			margin-top: 2px;
-		}
-	}
-}
 
 
 
 /* =============================================
 aside
-	- 右側ボタンとか
+- 右側ボタンとか
 =============================================*/
 aside {
 	width: 17.01vw;
@@ -696,6 +625,136 @@ aside {
 			&:last-child {
 				margin: 0;
 			}
+		}
+	}
+}
+
+/* =============================================
+footer
+	- メインコンテンツの下のボタン
+=============================================*/
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 5vh;
+	&-logo {
+		margin: 0 50px;
+		font-size: 30px;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		text-align: center;
+		color: #FCEBB7;
+		-webkit-text-stroke: 1px $text;
+		text-shadow: 2px 2px 0 $text;
+		letter-spacing: 3px;
+		&:hover {
+			text-shadow: none;
+			margin: 2px 50px 0 50px;
+		}
+	}
+	&-left {
+		color: #FCEBB7;
+		border-radius: 50%;
+		position: relative;
+		display: block;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		padding-top: 12px;
+		box-sizing: border-box;
+		font-size: 14px;
+		background: #FCEBB7;
+		box-shadow: 0 2px 0 #916740;
+		border: $text 3px solid;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 7px;
+			right: 13px;
+			width: 0;
+			height: 0;
+			border-right: 12px solid $text;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		div {
+			position: relative;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: center;
+			-webkit-text-stroke: 1px $text;
+			text-shadow: 1px 1px 0 $text;
+			letter-spacing: 1px;
+			padding-top: 25px;
+			&:hover {
+				text-shadow: none;
+			}
+		}
+		.nav-btn {
+			font-size: 40px;
+			position: relative;
+			display: inline-block;
+			transition: .5s
+		}
+		&:hover {
+			text-shadow: none;
+			box-shadow: none;
+			margin-top: 2px;
+		}
+	}
+	&-right {
+		color: #FCEBB7;
+		border-radius: 50%;
+		position: relative;
+		display: block;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		padding-top: 12px;
+		box-sizing: border-box;
+		font-size: 14px;
+		background: #FCEBB7;
+		box-shadow: 0 2px 0 #916740;
+		border: $text 3px solid;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 7px;
+			left: 13px;
+			width: 0;
+			height: 0;
+			border-left: 12px solid $text;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		div {
+			position: relative;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: center;
+			-webkit-text-stroke: 1px $text;
+			text-shadow: 1px 1px 0 $text;
+			letter-spacing: 1px;
+			padding-top: 25px;
+			&:hover {
+				text-shadow: none;
+			}
+		}
+		.nav-btn {
+			font-size: 40px;
+			position: relative;
+			display: inline-block;
+			transition: .5s
+		}
+		&:hover {
+			text-shadow: none;
+			box-shadow: none;
+			margin-top: 2px;
 		}
 	}
 }
