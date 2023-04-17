@@ -1,0 +1,43 @@
+/* =============================================
+全体の指定
+=============================================*/
+// Color ---------------------------------------
+$green: #78C0A8;
+$orange: #F0A830;
+$text: #5B4128;
+$base: #e3dcd5;
+$primary: #6cb4b8;
+$accent: #f3f3f6;
+$secondary: #a9a9a9;
+$width: 200px;
+$height: $width / 3;
+
+
+// レスポンシブ ------------------------------------
+$pc: 1120px;
+$tab: 1119px;
+$sp: 480px;
+
+@mixin pc {
+	@media screen and (min-width: ($pc)) {
+		@content;
+	}
+}
+
+@mixin tab {
+	@media screen and (max-width: ($tab)) {
+		@content;
+	}
+}
+
+@mixin sp {
+	@media screen and (max-width: ($sp)) {
+		@content;
+	}
+}
+
+// service
+
+#service {
+	background-color: $orange;
+}

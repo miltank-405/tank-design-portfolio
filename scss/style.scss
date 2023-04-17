@@ -16,7 +16,7 @@ $height: $width / 3;
 // レスポンシブ ------------------------------------
 $pc: 1120px;
 $tab: 1119px;
-$sp: 767px;
+$sp: 480px;
 @mixin pc {
 	@media screen and (min-width: ($pc)) {
 		@content;
@@ -41,7 +41,6 @@ html,body {
 	height: 100vh;
 }
 body {
-	background-color: $green;
 	overflow: hidden;
 	display: flex;
 	flex-wrap: wrap;
@@ -51,10 +50,14 @@ body {
 }
 main,
 footer {
-	width: 82.99vw;
+	@include pc {
+		width: 82.99vw;
+	}
 }
 main,aside {
-	height: 90vh;
+	@include pc {
+		height: 90vh;
+	}
 }
 nav,
 main,
@@ -75,6 +78,9 @@ img {
 	vertical-align: middle;
 }
 
+#top {
+	background-color: $green;
+}
 
 /* =============================================
 左nav - menu
@@ -168,6 +174,12 @@ img {
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
+		@include tab {
+			margin: 0 auto;
+		}
+		@include sp {
+			flex-direction: column;
+		}
 		p {
 			color: $base;
 			text-align: center;
@@ -474,6 +486,7 @@ MV
 				top: 6.78vh;
 				right: 4.44vw;
 				font-size: 10.53vw;
+				line-height: 12vh;
 			}
 		}
 		&-bottom {
@@ -495,6 +508,7 @@ MV
 				right: 4.79vw;
 				font-size: 10.53vw;
 				-webkit-text-stroke: 0.21vw $orange;
+				line-height: 12vh;
 			}
 		}
 		&-top {
@@ -516,6 +530,7 @@ MV
 				right: 4.03vw;
 				font-size: 10.53vw;
 				-webkit-text-stroke: 0.21vw $text;
+				line-height: 12vh;
 			}
 		}
 	}
@@ -540,6 +555,13 @@ aside {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	@include tab {
+		width: 95vw;
+		margin: 0 auto;
+		flex-direction: row;
+		justify-content: space-between;
+		border: none;
+	}
 }
 .aside {
 	position: relative;
@@ -549,10 +571,16 @@ aside {
 	border-radius: 50%;
 	border: #FCEBB7 1px solid;
 	text-align: center;
+	@include tab {
+		width: 100px;
+		height: 100px;
+	}
 	&:hover,
 	&:active {
-		transform: rotate(30deg);
-		transition: .4s;
+		@include pc {
+			transform: rotate(30deg);
+			transition: .4s;
+		}
 	}
 	&:before {
 		content: "";
@@ -565,6 +593,12 @@ aside {
 		background-color: #825A41;
 		border-radius: 50%;
 		box-sizing: border-box;
+		@include tab {
+			width: 90px;
+			height: 90px;
+			top: 4.5px;
+			left: 4.5px;
+		}
 	}
 	&-menu {
 		width: 155px;
@@ -583,11 +617,22 @@ aside {
 		color: rgba(0, 0, 0, 0);
 		-webkit-text-stroke: 1px #593D54;
 		text-shadow: 2px 2px 0 #78C0A8;
+		@include tab {
+			width: 88px;
+			height: 35px;
+			font-size: 1.74vw;
+			top: 32px;
+			left: 5px;
+		}
 		&:hover {
-			text-shadow: 0 0 0 $green;
+			@include sp {
+				text-shadow: 0 0 0 $green;
+			}
 		}
 		&1{
-			margin-bottom: 30px;
+			@include pc {
+				margin-bottom: 30px;
+			}
 		}
 	}
 	&-contact {
@@ -607,8 +652,17 @@ aside {
 		color: rgba(0, 0, 0, 0);
 		-webkit-text-stroke: 1px #593D54;
 		text-shadow: 2px 2px 0 #F07819;
+		@include tab {
+			width: 88px;
+			height: 35px;
+			font-size: 1.74vw;
+			top: 32px;
+			left: 5px;
+		}
 		&:hover {
-			text-shadow: 0 0 0 #F07819;
+			@include pc {
+				text-shadow: 0 0 0 #F07819;
+			}
 		}
 	}
 	&-border {
@@ -616,6 +670,9 @@ aside {
 		flex-direction: column;
 		width: 185px;
 		margin-top: 53px;
+		@include tab {
+			display: none;
+		}
 		span {
 			height: 8px;
 			background-color: $text;
@@ -639,6 +696,12 @@ footer
 	align-items: center;
 	text-align: center;
 	margin-bottom: 5vh;
+	@include tab {
+		margin-top: -6.75vh;
+	}
+	@include sp {
+		margin-top: -10vh;
+	}
 	&-logo {
 		margin: 0 50px;
 		font-size: 30px;
@@ -650,9 +713,15 @@ footer
 		-webkit-text-stroke: 1px $text;
 		text-shadow: 2px 2px 0 $text;
 		letter-spacing: 3px;
+		@include tab {
+			margin: 0;
+			width: 30vw;
+		}
 		&:hover {
-			text-shadow: none;
-			margin: 2px 50px 0 50px;
+			@include pc {
+				text-shadow: none;
+				margin: 2px 50px 0 50px;
+			}
 		}
 	}
 	&-left {
@@ -669,6 +738,9 @@ footer
 		background: #FCEBB7;
 		box-shadow: 0 2px 0 #916740;
 		border: $text 3px solid;
+		@include sp {
+			display: none;
+		}
 		&:before {
 			content: '';
 			position: absolute;
@@ -720,6 +792,9 @@ footer
 		background: #FCEBB7;
 		box-shadow: 0 2px 0 #916740;
 		border: $text 3px solid;
+		@include sp {
+			display: none;
+		}
 		&:before {
 			content: '';
 			position: absolute;
