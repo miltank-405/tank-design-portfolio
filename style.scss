@@ -1,0 +1,701 @@
+/* =============================================
+全体の指定
+=============================================*/
+// Color ---------------------------------------
+$green: #78C0A8;
+$orange: #F0A830;
+$text: #5B4128;
+$base: #e3dcd5;
+$primary: #6cb4b8;
+$accent: #f3f3f6;
+$secondary: #a9a9a9;
+$width: 200px;
+$height: $width / 3;
+
+
+// ブレークポイント1120
+
+// html ----------------------------------------
+html,body {
+	width: 100vw;
+	height: 100vh;
+}
+body {
+	background-color: $green;
+	overflow: hidden;
+	display: flex;
+}
+main {
+	width: 82.99vw;
+}
+a {
+	text-decoration: none;
+}
+p {
+	font-family: "sawarabi-gothic", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+}
+img {
+	vertical-align: text-bottom;
+	vertical-align: middle;
+}
+
+
+/* =============================================
+左nav - menu
+	- ボタンオンオフで表示切り替え
+=============================================*/
+// off
+.g-nav {
+	position: relative;
+	z-index: -999;
+	display: none;
+	&-wrapper {
+		width: 71.32vw;
+		height: 73.22vh;
+	}
+}
+// on
+.on {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+	z-index: 990;
+	margin: -73.22vh 0 0;
+	background: #2841A6;
+	border: $text 3px solid;
+	border-radius: 50px;
+	color: #fff;
+	p {
+		text-align: center;
+		padding: 12vh 0 30px;
+		font-size: 20px;
+		text-shadow: 1px 1px 3px #000;
+	}
+	ul {
+		text-align: center;
+	}
+	a {
+		color: #fff;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		text-align: right;
+		line-height: 80px;
+		letter-spacing: 5px;
+		font-size: 40px;
+		text-shadow: 3px 3px 3px #000;
+		-webkit-text-stroke: 1px #000;
+		transition: .5s;
+		position: relative;
+		&::after {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		content: '';
+		width: 0;
+		height: 1px;
+		background-color: #fff;
+		transition: .3s;
+		transform: translateX(-50%);
+		}
+		&:hover::after {
+			width: 100%;
+		}
+	}
+}
+
+
+/* =============================================
+左nav - contact
+	- ボタンオンオフで表示切り替え
+=============================================*/
+// off
+.contact-wrapper {
+	position: relative;
+	z-index: -999;
+	display: none;
+	// on
+	&-on {
+		position: relative;
+		display: block;
+		z-index: 991;
+		margin-top: -73.22vh;
+		backdrop-filter: blur(20px);
+		border: $text 3px solid;
+		border-radius: 50px;
+	}
+	&-link {
+		width: 71.32vw;
+		height: 73.22vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		p {
+			color: $base;
+			text-align: center;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			letter-spacing: 5px;
+			font-size: 30px;
+			text-shadow: 2px 2px 3px $text;
+			-webkit-text-stroke: 1px $text;
+		}
+	}
+	&-coconala {
+		svg {
+			height: 75px;
+		}
+		@-webkit-keyframes animate-svg-fill-1 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(0, 157, 255);
+			}
+		}
+		@keyframes animate-svg-fill-1 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(0, 157, 255);
+			}
+		}
+		&:hover .contact-wrapper-coconala-1 {
+			-webkit-animation: animate-svg-fill-1 0.7s ease-in 0.0s both;
+			animation: animate-svg-fill-1 0.7s ease-in 0.0s both;
+		}
+		@-webkit-keyframes animate-svg-fill-2 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(255, 234, 0);
+			}
+		}
+		@keyframes animate-svg-fill-2 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(255, 234, 0);
+			}
+		}
+		&:hover .contact-wrapper-coconala-2 {
+			-webkit-animation: animate-svg-fill-2 0.7s ease-in 0.4s both;
+			animation: animate-svg-fill-2 0.7s ease-in 0.4s both;
+		}
+		@-webkit-keyframes animate-svg-fill-3 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(238, 68, 153);
+			}
+		}
+		@keyframes animate-svg-fill-3 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(238, 68, 153);
+			}
+		}
+		&:hover .contact-wrapper-coconala-3 {
+			-webkit-animation: animate-svg-fill-3 0.7s ease-in 0.2s both;
+			animation: animate-svg-fill-3 0.7s ease-in 0.2s both;
+		}
+		@-webkit-keyframes animate-svg-fill-4 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(176, 51, 221);
+			}
+		}
+		@keyframes animate-svg-fill-4 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(176, 51, 221);
+			}
+		}
+		&:hover .contact-wrapper-coconala-4 {
+			-webkit-animation: animate-svg-fill-4 0.7s ease-in 0.8s both;
+			animation: animate-svg-fill-4 0.7s ease-in 0.8s both;
+		}
+		@-webkit-keyframes animate-svg-fill-5 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(34, 204, 187);
+			}
+		}
+		@keyframes animate-svg-fill-5 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(34, 204, 187);
+			}
+		}
+		&:hover .contact-wrapper-coconala-5 {
+			-webkit-animation: animate-svg-fill-5 0.7s ease-in 0.6s both;
+			animation: animate-svg-fill-5 0.7s ease-in 0.6s both;
+		}
+		@-webkit-keyframes animate-svg-fill-6 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(255, 153, 0);
+			}
+		}
+		@keyframes animate-svg-fill-6 {
+			0% {
+				fill: transparent;
+			}
+			100% {
+				fill: rgb(255, 153, 0);
+			}
+		}
+		&:hover .contact-wrapper-coconala-6 {
+			-webkit-animation: animate-svg-fill-6 0.7s ease-in 1s both;
+			animation: animate-svg-fill-6 0.7s ease-in 1s both;
+		}
+	}
+	&-mail {
+		&-envelope {
+			position: relative;
+			margin: 0 auto;
+			width: 120px;
+			height: 75px;
+			background: #edbd4c;
+			box-shadow: 0 0 1px #edbd4c inset;
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				width: 0;
+				height: 0;
+				border: 0 solid transparent;
+				border-width: 37px 60px;
+			}
+			&:before {
+				border-bottom-color: #edbd4c;
+				left: 0px;
+				transform: rotateX(180deg);
+				-webkit-transform: rotateX(180deg);
+				z-index: 2;
+				transition: transform .5s, z-index .5s, border-bottom-color .8s;
+				-webkit-transition: transform .5s, z-index .5s, border-bottom-color .8s;
+				transform-origin: 100% 100%;
+				-webkit-transform-origin: 100% 100%;
+				top: -74px;
+				transition-delay: .5s;
+				-webkit-transition-delay: .5s;
+			}
+			&:hover::before {
+				transform: rotateX(0deg);
+				-webkit-transform: rotateX(0deg);
+				z-index: 0;
+				transition: transform .5s, z-index 1s, border-bottom-color .5s;
+				-webkit-transition: transform .5s, z-index 1s, border-bottom-color .5s;
+				-ms-transition: transform .5s, z-index 1s, border-bottom-color .5s;
+				border-bottom-color: #edbd4c;
+			}
+			&:after {
+				border-right-color: #e8b94d;
+				border-left-color: #e8b94d;
+				border-bottom-color: #edbd4c;
+				top: 0;
+				-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+				box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+			}
+			&:hover>.contact-wrapper-mail-paper {
+				top: -30px;
+				transition: .5s;
+				-webkit-transition: .5s;
+				transition-delay: .5s;
+				-webkit-transition-delay: .5s;
+			}
+		}
+		&-paper {
+			position: absolute;
+			width: 95px;
+			height: 70px;
+			margin: 0 auto;
+			background: #fff;
+			top: 0px;
+			border-radius: 5px;
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+			left: 13px;
+			-webkit-transition: top 0.5s ease;
+			transition: top 0.5s ease;
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				left: 12px;
+				background: #e3f1fc;
+				height: 4px;
+				border-radius: 5px;
+			}
+			&:before {
+				top: 14px;
+				width: 31px;
+			}
+			&:after {
+				right: 12px;
+				top: 28px;
+				box-shadow: 0 8px 0 #e3f1fc, 0 16px 0 #e3f1fc, 0 24px 0 #e3f1fc, 0 40px 0 #e3f1fc;
+			}
+		}
+	}
+	&-twitter {
+		svg {
+			height: 75px;
+			margin: 0 auto;
+		}
+		&:hover #wing1 {
+			transform-origin: center;
+			animation: flap 0.4s ease-out infinite alternate;
+		}
+		&:hover #wing2 {
+			transform-origin: center;
+			animation: flap 0.4s ease-in infinite alternate;
+		}
+		@keyframes flap {
+			50% {
+				transform: scaleX(-1) rotate(-45deg) translate(-40px, -40px);
+			}
+		}
+	}
+}
+
+
+
+/* =============================================
+MV
+	- 下層ページは内容を変更
+=============================================*/
+.flame {
+	position: relative;
+	margin: 4.22vh auto 2.67vh;
+	padding: 2.43vh 2.71vw;
+	width: 76.74vw;
+	border: $text 10px solid;
+	border-radius: 50px;
+	background: #FCEBB7;
+	-ms-box-shadow: 0 0 36px $text inset;
+	-moz-box-shadow: 0 0 36px $text inset;
+	-webkit-box-shadow: 0 0 36px $text inset;
+	-o-box-shadow: 0 0 36px $text inset;
+	box-shadow: 0 0 36px $text inset;
+	.kv {
+		display: block;
+		margin: 0 auto;
+		img {
+			width: 71.32vw;
+			height: 73.22vh;
+			object-fit: cover;
+			object-position: 0 1%;
+			border: $text 3px solid;
+			border-radius: 50px;
+		}
+	}
+}
+
+
+.mv {
+	&-tittle {
+		h1 {
+			position: absolute;
+			top: 61px;
+			right: 64px;
+			font-size: 120px;
+			color: $green;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: right;
+			line-height: 144px;
+			letter-spacing: 10px;
+		}
+		&-bottom {
+			font-size: 120px;
+			position: absolute;
+			top: 56px;
+			right: 69px;
+			font-size: 120px;
+			color: rgba(0,0,0,0);
+			-webkit-text-stroke: 3px $orange;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: right;
+			line-height: 144px;
+			letter-spacing: 10px;
+		}
+		&-top {
+			font-size: 120px;
+			position: absolute;
+			top: 66px;
+			right: 58px;
+			font-size: 120px;
+			color: rgba(0, 0, 0, 0);
+			-webkit-text-stroke: 3px $text;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: right;
+			line-height: 144px;
+			letter-spacing: 10px;
+		}
+	}
+}
+// MVをIEとedgeに対応させる（下層ページには不要）
+.object-fit-img {
+	font-family: 'object-fit: cover; object-position: 0 1%;'
+}
+
+
+/* =============================================
+nav
+	- メインコンテンツの下のボタン
+=============================================*/
+.nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 6.67vh;
+	text-align: center;
+	&-logo {
+		margin: 0 50px;
+		font-size: 30px;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		text-align: center;
+		color: #FCEBB7;
+		-webkit-text-stroke: 1px $text;
+		text-shadow: 2px 2px 0 $text;
+		letter-spacing: 3px;
+		&:hover {
+			text-shadow: none;
+			margin: 2px 50px 0 50px;
+		}
+	}
+	&-left {
+		color: #FCEBB7;
+		border-radius: 50%;
+		position: relative;
+		display: block;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		padding-top: 12px;
+		box-sizing: border-box;
+		font-size: 14px;
+		background: #FCEBB7;
+		box-shadow: 0 2px 0 #916740;
+		border: $text 3px solid;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 7px;
+			right: 13px;
+			width: 0;
+			height: 0;
+			border-right: 12px solid $text;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		div {
+			position: relative;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: center;
+			-webkit-text-stroke: 1px $text;
+			text-shadow: 1px 1px 0 $text;
+			letter-spacing: 1px;
+			padding-top: 5px;
+			&:hover {
+				text-shadow: none;
+			}
+		}
+		.nav-btn {
+			font-size: 40px;
+			position: relative;
+			display: inline-block;
+			transition: .5s
+		}
+		&:hover {
+			text-shadow: none;
+			box-shadow: none;
+			margin-top: 2px;
+		}
+	}
+	&-right {
+		color: #FCEBB7;
+		border-radius: 50%;
+		position: relative;
+		display: block;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		padding-top: 12px;
+		box-sizing: border-box;
+		font-size: 14px;
+		background: #FCEBB7;
+		box-shadow: 0 2px 0 #916740;
+		border: $text 3px solid;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 7px;
+			left: 13px;
+			width: 0;
+			height: 0;
+			border-left: 12px solid $text;
+			border-top: 10px solid transparent;
+			border-bottom: 10px solid transparent;
+		}
+		div {
+			position: relative;
+			font-family: "futura-pt-bold", sans-serif;
+			font-weight: 700;
+			font-style: normal;
+			text-align: center;
+			-webkit-text-stroke: 1px $text;
+			text-shadow: 1px 1px 0 $text;
+			letter-spacing: 1px;
+			padding-top: 5px;
+			&:hover {
+				text-shadow: none;
+			}
+		}
+		.nav-btn {
+			font-size: 40px;
+			position: relative;
+			display: inline-block;
+			transition: .5s
+		}
+		&:hover {
+			text-shadow: none;
+			box-shadow: none;
+			margin-top: 2px;
+		}
+	}
+}
+
+
+
+/* =============================================
+aside
+	- 右側ボタンとか
+=============================================*/
+aside {
+	width: 17.01vw;
+	border-left: $text 2px solid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.aside {
+	position: relative;
+	width: 185px;
+	height: 185px;
+	background-color: $text;
+	border-radius: 50%;
+	border: #FCEBB7 1px solid;
+	text-align: center;
+	&:hover,
+	&:active {
+		transform: rotate(30deg);
+		transition: .4s;
+	}
+	&:before {
+		content: "";
+		width: 157px;
+		height: 157px;
+		position: absolute;
+		top: 14px;
+		left: 14px;
+		border: #FCEBB7 1px solid;
+		background-color: #825A41;
+		border-radius: 50%;
+		box-sizing: border-box;
+	}
+	&-menu {
+		width: 155px;
+		height: 44px;
+		position: absolute;
+		top: 70.5px;
+		left: 15px;
+		background-color: #FCEBB7;
+		border: $text 3px solid;
+		border-radius: 15px;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		letter-spacing: 2.5px;
+		font-size: 25px;
+		color: rgba(0, 0, 0, 0);
+		-webkit-text-stroke: 1px #593D54;
+		text-shadow: 2px 2px 0 #78C0A8;
+		&:hover {
+			text-shadow: 0 0 0 $green;
+		}
+		&1{
+			margin-bottom: 30px;
+		}
+	}
+	&-contact {
+		width: 155px;
+		height: 44px;
+		position: absolute;
+		top: 70.5px;
+		left: 15px;
+		background-color: #FCEBB7;
+		border: $text 3px solid;
+		border-radius: 15px;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		letter-spacing: 2.5px;
+		font-size: 25px;
+		color: rgba(0, 0, 0, 0);
+		-webkit-text-stroke: 1px #593D54;
+		text-shadow: 2px 2px 0 #F07819;
+		&:hover {
+			text-shadow: 0 0 0 #F07819;
+		}
+	}
+	&-border {
+		display: flex;
+		flex-direction: column;
+		width: 185px;
+		margin-top: 53px;
+		span {
+			height: 8px;
+			background-color: $text;
+			border: #FCEBB7 1px solid;
+			border-radius: 10px;
+			margin-bottom: 4px;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+}
