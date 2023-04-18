@@ -1,4 +1,5 @@
-/*# sourceMappingURL=mixin.css.map */e object-fit:
+/*
+  This mixin can be used to set the object-fit:
   @include object-fit(contain);
 
   or object-fit and object-position:
