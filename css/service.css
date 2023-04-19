@@ -1,0 +1,299 @@
+@charset "UTF-8";
+/* =============================================
+全体の指定
+=============================================*/
+#service {
+  background-color: #F0A830;
+}
+
+.service {
+  display: block;
+  height: 73.22vh;
+  background-image: url("../img/23526915.jpg");
+  border-radius: 50px;
+  border: #5B4128 3px solid;
+  position: relative;
+}
+.service-wrapper {
+  margin-top: 2.25vh;
+}
+@media screen and (max-width: 1119px) {
+  .service-wrapper {
+    margin-top: 6.25vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-wrapper {
+    margin-top: 3.25vh;
+  }
+}
+.service h3 {
+  margin: 2.8vh 0 0 2.08vw;
+  color: transparent;
+  font-size: 60px;
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 10px;
+  -webkit-text-stroke: 3px #5B4128;
+  text-shadow: 3px 3px 0 #F0A830, 6px 6px 0 #78C0A8;
+}
+@media screen and (max-width: 1119px) {
+  .service h3 {
+    font-size: 45px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service h3 {
+    font-size: 35px;
+    -webkit-text-stroke: 1px #5B4128;
+    text-shadow: 2px 2px 0 #F0A830, 3px 3px 0 #78C0A8;
+  }
+}
+.service-hearing {
+  position: relative;
+  margin-left: 5.83vw;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22555%22%20height%3D%22131%22%20viewBox%3D%220%200%20555%20131%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M37%207H555L525%20131H7L37%207Z%22%20fill%3D%22%2300E0F0%22%2F%3E%3Cpath%20d%3D%22M32%202H550L520%20126H2L32%202Z%22%20stroke%3D%22%235B4128%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  margin-bottom: 3.5vh;
+}
+@media screen and (max-width: 1119px) {
+  .service-hearing {
+    margin-bottom: 5vh;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-hearing {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22307%22%20height%3D%22157%22%20viewBox%3D%220%200%20307%20157%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M23.4234%207H307L290.577%20157H7L23.4234%207Z%22%20fill%3D%22%2300E0F0%22%2F%3E%3Cpath%20d%3D%22M18.4234%202H302L285.577%20152H2L18.4234%202Z%22%20stroke%3D%22%235B4128%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E");
+    margin: 0;
+    padding-bottom: 4vh;
+    background-size: 95%;
+    background-position: right;
+  }
+}
+.service-hearing h4 {
+  position: absolute;
+  top: -29px;
+  left: 308px;
+  font-size: 40px;
+  color: transparent;
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 10px;
+  -webkit-text-stroke: 1px #00E0F0;
+  text-shadow: -2px -2px 0 #5B4128;
+}
+@media screen and (max-width: 1119px) {
+  .service-hearing h4 {
+    font-size: 30px;
+    top: -20px;
+    letter-spacing: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-hearing h4 {
+    top: 0;
+    left: 7px;
+    letter-spacing: 0;
+  }
+}
+.service-hearing-contents {
+  display: flex;
+  align-items: center;
+  height: 132px;
+}
+@media screen and (max-width: 480px) {
+  .service-hearing-contents {
+    justify-content: center;
+  }
+}
+.service-hearing-contents img {
+  width: 180px;
+}
+@media screen and (max-width: 480px) {
+  .service-hearing-contents img {
+    width: 100px;
+    margin-top: 45px;
+  }
+}
+.service-hearing-contents p {
+  font-size: 16px;
+  width: 345px;
+}
+@media screen and (max-width: 480px) {
+  .service-hearing-contents p {
+    font-size: 14px;
+    margin-top: 45px;
+    width: 182px;
+    text-shadow: 2px 2px 0 #00E0F0;
+  }
+}
+.service-design {
+  position: relative;
+  margin-left: 13vw;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22555%22%20height%3D%22131%22%20viewBox%3D%220%200%20555%20131%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M37%207H555L525%20131H7L37%207Z%22%20fill%3D%22%2318F0A8%22%2F%3E%3Cpath%20d%3D%22M32%202H550L520%20126H2L32%202Z%22%20stroke%3D%22%235B4128%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  margin-bottom: 2.5vh;
+}
+@media screen and (max-width: 1119px) {
+  .service-design {
+    margin-bottom: 5vh;
+    margin-left: 8vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-design {
+    margin: 0;
+    padding-bottom: 4vh;
+    background-size: 95%;
+    background-position: right;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22307%22%20height%3D%22157%22%20viewBox%3D%220%200%20307%20157%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M23.4234%207H307L290.577%20157H7L23.4234%207Z%22%20fill%3D%22%2318F0A8%22%2F%3E%3Cpath%20d%3D%22M18.4234%202H302L285.577%20152H2L18.4234%202Z%22%20stroke%3D%22%235B4128%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E");
+  }
+}
+.service-design h4 {
+  position: absolute;
+  top: -29px;
+  left: 308px;
+  font-size: 40px;
+  color: transparent;
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 10px;
+  -webkit-text-stroke: 1px #18F0A8;
+  text-shadow: -2px -2px 0 #5B4128;
+}
+@media screen and (max-width: 1119px) {
+  .service-design h4 {
+    font-size: 30px;
+    top: -20px;
+    letter-spacing: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-design h4 {
+    top: 0;
+    left: 7px;
+    letter-spacing: 0;
+  }
+}
+.service-design-contents {
+  display: flex;
+  align-items: center;
+  height: 132px;
+}
+@media screen and (max-width: 480px) {
+  .service-design-contents {
+    justify-content: center;
+  }
+}
+.service-design-contents img {
+  width: 180px;
+}
+@media screen and (max-width: 480px) {
+  .service-design-contents img {
+    width: 100px;
+    margin-top: 45px;
+  }
+}
+.service-design-contents p {
+  font-size: 16px;
+  width: 345px;
+}
+@media screen and (max-width: 480px) {
+  .service-design-contents p {
+    font-size: 14px;
+    margin-top: 45px;
+    width: 182px;
+    text-shadow: 2px 2px 0 #18F0A8;
+  }
+}
+.service-coding {
+  position: relative;
+  margin-left: 20vw;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22555%22%20height%3D%22131%22%20viewBox%3D%220%200%20555%20131%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M37%207H555L525%20131H7L37%207Z%22%20fill%3D%22%23F0E118%22%2F%3E%3Cpath%20d%3D%22M32%202H550L520%20126H2L32%202Z%22%20stroke%3D%22%235B4128%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 1119px) {
+  .service-coding {
+    margin-left: 10vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-coding {
+    margin: 0 auto;
+    padding-bottom: 4vh;
+    background-size: 95%;
+    background-position: right;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%22307%22%20height%3D%22157%22%20viewBox%3D%220%200%20307%20157%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M23.4234%207H307L290.577%20157H7L23.4234%207Z%22%20fill%3D%22%23F0E118%22%2F%3E%3Cpath%20d%3D%22M18.4234%202H302L285.577%20152H2L18.4234%202Z%22%20stroke%3D%22%235B4128%22%20stroke-width%3D%223%22%2F%3E%3C%2Fsvg%3E");
+  }
+}
+.service-coding h4 {
+  position: absolute;
+  top: -29px;
+  left: 308px;
+  font-size: 40px;
+  color: transparent;
+  font-family: "futura-pt-bold", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 10px;
+  -webkit-text-stroke: 1px #F0E118;
+  text-shadow: -2px -2px 0 #5B4128;
+}
+@media screen and (max-width: 1119px) {
+  .service-coding h4 {
+    font-size: 30px;
+    top: -20px;
+    letter-spacing: 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .service-coding h4 {
+    top: 0;
+    left: 7px;
+    letter-spacing: 0;
+  }
+}
+.service-coding-contents {
+  display: flex;
+  align-items: center;
+  height: 132px;
+}
+@media screen and (max-width: 480px) {
+  .service-coding-contents {
+    justify-content: center;
+  }
+}
+.service-coding-contents img {
+  width: 180px;
+}
+@media screen and (max-width: 480px) {
+  .service-coding-contents img {
+    width: 100px;
+    margin-top: 45px;
+  }
+}
+.service-coding-contents p {
+  font-size: 16px;
+  width: 345px;
+}
+@media screen and (max-width: 480px) {
+  .service-coding-contents p {
+    font-size: 14px;
+    margin-top: 45px;
+    width: 182px;
+    text-shadow: 2px 2px 0 #F0E118;
+  }
+}
+.service-nav {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.service-contact {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}/*# sourceMappingURL=service.css.map */

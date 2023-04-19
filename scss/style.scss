@@ -13,7 +13,27 @@ $width: 200px;
 $height: $width / 3;
 
 
-// ブレークポイント1120
+// レスポンシブ ------------------------------------
+$pc: 1120px;
+$tab: 1119px;
+$sp: 480px;
+@mixin pc {
+	@media screen and (min-width: ($pc)) {
+		@content;
+	}
+}
+@mixin tab {
+	@media screen and (max-width: ($tab)) {
+		@content;
+	}
+}
+@mixin sp {
+	@media screen and (max-width: ($sp)) {
+		@content;
+	}
+}
+
+
 
 // html ----------------------------------------
 html,body {
@@ -21,12 +41,29 @@ html,body {
 	height: 100vh;
 }
 body {
-	background-color: $green;
 	overflow: hidden;
 	display: flex;
+	flex-wrap: wrap;
+	@include tab {
+		display: block;
+	}
 }
-main {
-	width: 82.99vw;
+main,
+footer {
+	@include pc {
+		width: 82.99vw;
+	}
+}
+main,aside {
+	@include pc {
+		height: 90vh;
+	}
+}
+nav,
+main,
+aside,
+footer {
+	display: block;
 }
 a {
 	text-decoration: none;
@@ -41,6 +78,9 @@ img {
 	vertical-align: middle;
 }
 
+#top {
+	background-color: $green;
+}
 
 /* =============================================
 左nav - menu
@@ -53,7 +93,7 @@ img {
 	display: none;
 	&-wrapper {
 		width: 71.32vw;
-		height: 73.22vh;
+		height: 72.6vh;
 	}
 }
 // on
@@ -130,10 +170,16 @@ img {
 	}
 	&-link {
 		width: 71.32vw;
-		height: 73.22vh;
+		height: 72.6vh;
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
+		@include tab {
+			margin: 0 auto;
+		}
+		@include sp {
+			flex-direction: column;
+		}
 		p {
 			color: $base;
 			text-align: center;
@@ -389,7 +435,7 @@ MV
 =============================================*/
 .flame {
 	position: relative;
-	margin: 4.22vh auto 2.67vh;
+	margin: 4.22vh auto 0;
 	padding: 2.43vh 2.71vw;
 	width: 76.74vw;
 	border: $text 10px solid;
@@ -400,6 +446,10 @@ MV
 	-webkit-box-shadow: 0 0 36px $text inset;
 	-o-box-shadow: 0 0 36px $text inset;
 	box-shadow: 0 0 36px $text inset;
+	@include tab {
+		width: 92vw;
+		margin: 4%;
+	}
 	.kv {
 		display: block;
 		margin: 0 auto;
@@ -410,6 +460,9 @@ MV
 			object-position: 0 1%;
 			border: $text 3px solid;
 			border-radius: 50px;
+			@include tab {
+				width: 87vw;
+			}
 		}
 	}
 }
@@ -429,6 +482,12 @@ MV
 			text-align: right;
 			line-height: 144px;
 			letter-spacing: 10px;
+			@include tab {
+				top: 6.78vh;
+				right: 4.44vw;
+				font-size: 10.53vw;
+				line-height: 12vh;
+			}
 		}
 		&-bottom {
 			font-size: 120px;
@@ -444,6 +503,13 @@ MV
 			text-align: right;
 			line-height: 144px;
 			letter-spacing: 10px;
+			@include tab {
+				top: 6.22vh;
+				right: 4.79vw;
+				font-size: 10.53vw;
+				-webkit-text-stroke: 0.21vw $orange;
+				line-height: 12vh;
+			}
 		}
 		&-top {
 			font-size: 120px;
@@ -459,6 +525,13 @@ MV
 			text-align: right;
 			line-height: 144px;
 			letter-spacing: 10px;
+			@include tab {
+				top: 7.33vh;
+				right: 4.03vw;
+				font-size: 10.53vw;
+				-webkit-text-stroke: 0.21vw $text;
+				line-height: 12vh;
+			}
 		}
 	}
 }
@@ -468,16 +541,167 @@ MV
 }
 
 
+
+
+
 /* =============================================
-nav
+aside
+- 右側ボタンとか
+=============================================*/
+aside {
+	width: 17.01vw;
+	border-left: $text 2px solid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	@include tab {
+		width: 95vw;
+		margin: 0 auto;
+		flex-direction: row;
+		justify-content: space-between;
+		border: none;
+	}
+}
+.aside {
+	position: relative;
+	width: 185px;
+	height: 185px;
+	background-color: $text;
+	border-radius: 50%;
+	border: #FCEBB7 1px solid;
+	text-align: center;
+	@include tab {
+		width: 100px;
+		height: 100px;
+	}
+	&:hover,
+	&:active {
+		@include pc {
+			transform: rotate(30deg);
+			transition: .4s;
+		}
+	}
+	&:before {
+		content: "";
+		width: 157px;
+		height: 157px;
+		position: absolute;
+		top: 14px;
+		left: 14px;
+		border: #FCEBB7 1px solid;
+		background-color: #825A41;
+		border-radius: 50%;
+		box-sizing: border-box;
+		@include tab {
+			width: 90px;
+			height: 90px;
+			top: 4.5px;
+			left: 4.5px;
+		}
+	}
+	&-menu {
+		width: 155px;
+		height: 44px;
+		position: absolute;
+		top: 70.5px;
+		left: 15px;
+		background-color: #FCEBB7;
+		border: $text 3px solid;
+		border-radius: 15px;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		letter-spacing: 2.5px;
+		font-size: 25px;
+		color: rgba(0, 0, 0, 0);
+		-webkit-text-stroke: 1px #593D54;
+		text-shadow: 2px 2px 0 #78C0A8;
+		@include tab {
+			width: 88px;
+			height: 35px;
+			font-size: 1.74vw;
+			top: 32px;
+			left: 5px;
+		}
+		&:hover {
+			@include sp {
+				text-shadow: 0 0 0 $green;
+			}
+		}
+		&1{
+			@include pc {
+				margin-bottom: 30px;
+			}
+		}
+	}
+	&-contact {
+		width: 155px;
+		height: 44px;
+		position: absolute;
+		top: 70.5px;
+		left: 15px;
+		background-color: #FCEBB7;
+		border: $text 3px solid;
+		border-radius: 15px;
+		font-family: "futura-pt-bold", sans-serif;
+		font-weight: 700;
+		font-style: normal;
+		letter-spacing: 2.5px;
+		font-size: 25px;
+		color: rgba(0, 0, 0, 0);
+		-webkit-text-stroke: 1px #593D54;
+		text-shadow: 2px 2px 0 #F07819;
+		@include tab {
+			width: 88px;
+			height: 35px;
+			font-size: 1.74vw;
+			top: 32px;
+			left: 5px;
+		}
+		&:hover {
+			@include pc {
+				text-shadow: 0 0 0 #F07819;
+			}
+		}
+	}
+	&-border {
+		display: flex;
+		flex-direction: column;
+		width: 185px;
+		margin-top: 53px;
+		@include tab {
+			display: none;
+		}
+		span {
+			height: 8px;
+			background-color: $text;
+			border: #FCEBB7 1px solid;
+			border-radius: 10px;
+			margin-bottom: 4px;
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+}
+
+/* =============================================
+footer
 	- メインコンテンツの下のボタン
 =============================================*/
-.nav {
+.footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 6.67vh;
 	text-align: center;
+	margin-bottom: 5vh;
+	@include tab {
+		margin-top: -6.75vh;
+	}
+	@include sp {
+		margin-top: -10vh;
+	}
 	&-logo {
 		margin: 0 50px;
 		font-size: 30px;
@@ -489,9 +713,15 @@ nav
 		-webkit-text-stroke: 1px $text;
 		text-shadow: 2px 2px 0 $text;
 		letter-spacing: 3px;
+		@include tab {
+			margin: 0;
+			width: 30vw;
+		}
 		&:hover {
-			text-shadow: none;
-			margin: 2px 50px 0 50px;
+			@include pc {
+				text-shadow: none;
+				margin: 2px 50px 0 50px;
+			}
 		}
 	}
 	&-left {
@@ -508,6 +738,9 @@ nav
 		background: #FCEBB7;
 		box-shadow: 0 2px 0 #916740;
 		border: $text 3px solid;
+		@include sp {
+			display: none;
+		}
 		&:before {
 			content: '';
 			position: absolute;
@@ -528,7 +761,7 @@ nav
 			-webkit-text-stroke: 1px $text;
 			text-shadow: 1px 1px 0 $text;
 			letter-spacing: 1px;
-			padding-top: 5px;
+			padding-top: 25px;
 			&:hover {
 				text-shadow: none;
 			}
@@ -559,6 +792,9 @@ nav
 		background: #FCEBB7;
 		box-shadow: 0 2px 0 #916740;
 		border: $text 3px solid;
+		@include sp {
+			display: none;
+		}
 		&:before {
 			content: '';
 			position: absolute;
@@ -579,7 +815,7 @@ nav
 			-webkit-text-stroke: 1px $text;
 			text-shadow: 1px 1px 0 $text;
 			letter-spacing: 1px;
-			padding-top: 5px;
+			padding-top: 25px;
 			&:hover {
 				text-shadow: none;
 			}
@@ -594,108 +830,6 @@ nav
 			text-shadow: none;
 			box-shadow: none;
 			margin-top: 2px;
-		}
-	}
-}
-
-
-
-/* =============================================
-aside
-	- 右側ボタンとか
-=============================================*/
-aside {
-	width: 17.01vw;
-	border-left: $text 2px solid;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.aside {
-	position: relative;
-	width: 185px;
-	height: 185px;
-	background-color: $text;
-	border-radius: 50%;
-	border: #FCEBB7 1px solid;
-	text-align: center;
-	&:hover,
-	&:active {
-		transform: rotate(30deg);
-		transition: .4s;
-	}
-	&:before {
-		content: "";
-		width: 157px;
-		height: 157px;
-		position: absolute;
-		top: 14px;
-		left: 14px;
-		border: #FCEBB7 1px solid;
-		background-color: #825A41;
-		border-radius: 50%;
-		box-sizing: border-box;
-	}
-	&-menu {
-		width: 155px;
-		height: 44px;
-		position: absolute;
-		top: 70.5px;
-		left: 15px;
-		background-color: #FCEBB7;
-		border: $text 3px solid;
-		border-radius: 15px;
-		font-family: "futura-pt-bold", sans-serif;
-		font-weight: 700;
-		font-style: normal;
-		letter-spacing: 2.5px;
-		font-size: 25px;
-		color: rgba(0, 0, 0, 0);
-		-webkit-text-stroke: 1px #593D54;
-		text-shadow: 2px 2px 0 #78C0A8;
-		&:hover {
-			text-shadow: 0 0 0 $green;
-		}
-		&1{
-			margin-bottom: 30px;
-		}
-	}
-	&-contact {
-		width: 155px;
-		height: 44px;
-		position: absolute;
-		top: 70.5px;
-		left: 15px;
-		background-color: #FCEBB7;
-		border: $text 3px solid;
-		border-radius: 15px;
-		font-family: "futura-pt-bold", sans-serif;
-		font-weight: 700;
-		font-style: normal;
-		letter-spacing: 2.5px;
-		font-size: 25px;
-		color: rgba(0, 0, 0, 0);
-		-webkit-text-stroke: 1px #593D54;
-		text-shadow: 2px 2px 0 #F07819;
-		&:hover {
-			text-shadow: 0 0 0 #F07819;
-		}
-	}
-	&-border {
-		display: flex;
-		flex-direction: column;
-		width: 185px;
-		margin-top: 53px;
-		span {
-			height: 8px;
-			background-color: $text;
-			border: #FCEBB7 1px solid;
-			border-radius: 10px;
-			margin-bottom: 4px;
-			&:last-child {
-				margin: 0;
-			}
 		}
 	}
 }
